@@ -1,3 +1,4 @@
+  
 #!/bin/bash
 
 tail=0
@@ -30,3 +31,19 @@ do
 	else
 		echo "Invalid Result"
 	fi
+
+
+	if [[ $headCount == $target || $tailCount == $target ]]
+	then
+		echo "Both are Tie reached head $headCount times and also reached tail-$$tailCount times"
+	fi
+
+done
+if [[ $headCount < $tailCount ]]
+then
+        echo "Tail won by $(($tailCount - $headCount)) more times"
+else
+        echo "Head won by $(($headCount - $tailCount)) more times"
+fi
+echo "Tail has won $tailCount times"
+echo "Head has won $headCount times"
